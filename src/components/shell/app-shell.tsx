@@ -124,6 +124,21 @@ export function AppShell({
                 </Link>
               );
             })}
+
+            {/* Notifications Link (Desktop) */}
+            <Link
+              href="/notifications"
+              className={cn(
+                "flex items-center gap-3 rounded-[6px] px-3 py-2.5 text-sm font-medium transition-colors",
+                pathname === "/notifications"
+                  ? "bg-[var(--surface-2)] text-[var(--ink)] font-semibold"
+                  : "text-[var(--ink-2)] hover:bg-[var(--surface-2)] hover:text-[var(--ink)]"
+              )}
+              title="Notifications"
+            >
+              <Bell size={20} strokeWidth={1.5} className="shrink-0" />
+              <span className="hidden lg:inline">Notifications</span>
+            </Link>
           </nav>
         </div>
 
@@ -222,6 +237,12 @@ function UserAvatarMenu({
       </DropdownMenuTrigger>
       <DropdownMenuContent align={isDesktop ? "start" : "end"} className="w-52">
         <DropdownMenuLabel>My account</DropdownMenuLabel>
+        <DropdownMenuItem asChild>
+          <Link href="/notifications" className="flex items-center gap-2">
+            <Bell size={16} strokeWidth={1.5} />
+            <span>Notifications</span>
+          </Link>
+        </DropdownMenuItem>
         <DropdownMenuItem asChild>
           <Link href="/profile" className="flex items-center gap-2">
             <User size={16} strokeWidth={1.5} />
