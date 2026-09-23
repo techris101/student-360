@@ -1,21 +1,26 @@
 import { z } from "zod";
 
+const emptyToUndefined = z.literal("").transform(() => undefined);
+const optionalString = z.string().min(1).optional().or(emptyToUndefined);
+const optionalUrl = z.string().url().optional().or(emptyToUndefined);
+const optionalEmail = z.string().email().optional().or(emptyToUndefined);
+
 const clientEnvSchema = z.object({
   NEXT_PUBLIC_SITE_URL: z.string().url().default("http://localhost:3000"),
-  NEXT_PUBLIC_SUPABASE_URL: z.string().url().optional(),
-  NEXT_PUBLIC_SUPABASE_ANON_KEY: z.string().min(1).optional(),
+  NEXT_PUBLIC_SUPABASE_URL: optionalUrl,
+  NEXT_PUBLIC_SUPABASE_ANON_KEY: optionalString,
 });
 
 const serverEnvSchema = clientEnvSchema.extend({
-  SUPABASE_SERVICE_ROLE_KEY: z.string().min(1).optional(),
-  SUPABASE_PROJECT_REF: z.string().min(1).optional(),
-  SUPABASE_DB_PASSWORD: z.string().min(1).optional(),
-  SUPABASE_ACCESS_TOKEN: z.string().min(1).optional(),
-  GOOGLE_GENERATIVE_AI_API_KEY: z.string().min(1).optional(),
-  AI_MODEL_FAST: z.string().default("gemini-2.5-flash-lite"),
-  AI_MODEL_SMART: z.string().default("gemini-2.5-flash"),
+  SUPABASE_SERVICE_ROLE_KEY: optionalString,
+  SUPABASE_PROJECT_REF: optionalString,
+  SUPABASE_DB_PASSWORD: optionalString,
+  SUPABASE_ACCESS_TOKEN: optionalString,
+  GOOGLE_GENERATIVE_AI_API_KEY: optionalString,
+  AI_MODEL_FAST: z.string().default("gemini-3.5-flash-lite"),
+  AI_MODEL_SMART: z.string().default("gemini-3.6-flash"),
   AI_DAILY_MESSAGE_CAP: z.coerce.number().int().positive().default(30),
-  VERCEL_TOKEN: z.string().min(1).optional(),
+  VERCEL_TOKEN: optionalString,
   ADMIN_EMAILS: z
     .string()
     .default("techris101@gmail.com")
@@ -25,9 +30,9 @@ const serverEnvSchema = clientEnvSchema.extend({
         .map((e) => e.trim().toLowerCase())
         .filter(Boolean)
     ),
-  CRON_SECRET: z.string().min(1).optional(),
-  RESEND_API_KEY: z.string().min(1).optional(),
-  EMAIL_FROM: z.string().email().optional(),
+  CRON_SECRET: optionalString,
+  RESEND_API_KEY: optionalString,
+  EMAIL_FROM: optionalEmail,
 });
 
 export type ClientEnv = z.infer<typeof clientEnvSchema>;
