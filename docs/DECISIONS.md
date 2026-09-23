@@ -20,4 +20,5 @@
 - Vercel Hobby plan is for non-commercial use; move to Pro (or another host) before monetising.
 
 ## Made during build
-(Agent: log each decision here as "- YYYY-MM-DD — decision — reason".)
+- 2026-09-23 — AI models configured — Selected `gemini-2.5-flash-lite` for `AI_MODEL_FAST` (fast, economical for extraction and parsing) and `gemini-2.5-flash` for `AI_MODEL_SMART` (high quality for advisor and reviews), verified against live Google AI API.
+
