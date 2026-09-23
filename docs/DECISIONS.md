@@ -21,4 +21,7 @@
 
 ## Made during build
 - 2026-09-23 — AI models configured — Selected `gemini-2.5-flash-lite` for `AI_MODEL_FAST` (fast, economical for extraction and parsing) and `gemini-2.5-flash` for `AI_MODEL_SMART` (high quality for advisor and reviews), verified against live Google AI API.
+- 2026-09-23 — Source registry & polite pipeline crawling — Configured 46 opportunity sources and 9 news sources from `docs/SOURCES.md`. Enforced strict 1 req/sec domain throttling, robots.txt parsing via `robots-parser`, and Mozilla Readability DOM parsing via `linkedom`. Aggregator URLs are strictly resolved to genuine external official links or quarantined as `pending_review`.
+- 2026-09-23 — Multi-tiered deduplication — Implemented canonical URL normalization (stripping tracking parameters and sorting query keys), SHA-256 content hashing on normalized organisation + title, and trigram Dice similarity (> 0.8) within the same organization.
+
 
