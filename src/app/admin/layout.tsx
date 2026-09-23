@@ -73,6 +73,12 @@ export default async function AdminLayout({
             >
               Moderation
             </Link>
+            <Link
+              href="/admin/news"
+              className="px-3 py-1.5 hover:bg-[var(--surface-sunken)] text-[var(--ink-secondary)] hover:text-[var(--ink-primary)] font-medium transition-colors"
+            >
+              News
+            </Link>
           </nav>
         </div>
 
