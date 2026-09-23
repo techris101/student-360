@@ -79,6 +79,12 @@ export default async function AdminLayout({
             >
               News
             </Link>
+            <Link
+              href="/admin/errors"
+              className="px-3 py-1.5 hover:bg-[var(--surface-sunken)] text-[var(--ink-secondary)] hover:text-[var(--ink-primary)] font-medium transition-colors"
+            >
+              Errors
+            </Link>
           </nav>
         </div>
 
