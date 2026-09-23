@@ -67,6 +67,12 @@ export default async function AdminLayout({
             >
               Pipeline Runs
             </Link>
+            <Link
+              href="/admin/moderation"
+              className="px-3 py-1.5 hover:bg-[var(--surface-sunken)] text-[var(--ink-secondary)] hover:text-[var(--ink-primary)] font-medium transition-colors"
+            >
+              Moderation
+            </Link>
           </nav>
         </div>
 
