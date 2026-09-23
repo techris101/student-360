@@ -1,26 +1,72 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --bg: #F6F6F4;
+    --surface: #FFFFFF;
+    --surface-2: #F0EFEA;
+    --ink: #1A1A1A;
+    --ink-2: #4E4D49;
+    --muted: #8A8880;
+    --line: #E2E0D8;
+    --line-strong: #D3D1C7;
+    --teal: #0F6E56;
+    --teal-subtle: #E1F5EE;
+    --amber: #7A4A0A;
+    --amber-subtle: #FAEEDA;
+    --red: #A32D2D;
+    --red-subtle: #FCEBEB;
+
+    --floating-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  .dark {
+    --bg: #17191C;
+    --surface: #1F2226;
+    --surface-2: #262A2F;
+    --ink: #ECEAE4;
+    --ink-2: #B9B6AE;
+    --muted: #8E8B84;
+    --line: #33373D;
+    --line-strong: #444950;
+    --teal: #4DB594;
+    --teal-subtle: #16352C;
+    --amber: #E0A95A;
+    --amber-subtle: #3A2C16;
+    --red: #E27272;
+    --red-subtle: #3B1D1D;
+
+    --floating-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  }
+
+  * {
+    border-color: var(--line);
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+    font-variant-numeric: tabular-nums;
+    -webkit-font-smoothing: antialiased;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@theme {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-teal: var(--teal);
+  --color-teal-subtle: var(--teal-subtle);
+  --color-amber: var(--amber);
+  --color-amber-subtle: var(--amber-subtle);
+  --color-red: var(--red);
+  --color-red-subtle: var(--red-subtle);
+
+  --shadow-floating: var(--floating-shadow);
 }
