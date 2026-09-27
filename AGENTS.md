@@ -70,3 +70,13 @@ Typecheck passes, lint passes, relevant tests pass, UI checked at 390px and 1280
 - Show a "success rate" or acceptance probability. We show eligibility matching only (see `docs/DECISIONS.md` D1).
 - Copy full articles or posts. Short original summaries plus a link to the source.
 - Run destructive commands outside the repo, `rm -rf` on paths you did not create, or drop production tables.
+
+<!-- BEGIN:nextjs-agent-rules -->
+
+# This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->
