@@ -14,19 +14,19 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const Comp = asChild ? Slot : "button";
 
     const baseStyles =
-      "inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-colors duration-150 disabled:pointer-events-none disabled:opacity-50 select-none cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--teal)] focus-visible:ring-offset-2 rounded-[6px]";
+      "inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all duration-150 disabled:pointer-events-none disabled:opacity-40 select-none cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--teal)] focus-visible:ring-offset-2 active:scale-[0.985] rounded-[6px]";
 
     const variantStyles = {
       primary:
-        "bg-[var(--teal)] text-white hover:opacity-90 active:opacity-95 shadow-none",
+        "bg-[var(--teal)] text-white hover:brightness-105 active:brightness-95 shadow-sm font-medium",
       secondary:
-        "bg-[var(--surface)] text-[var(--ink)] border border-[var(--line-strong)] hover:bg-[var(--surface-2)] active:bg-[var(--surface-2)]",
+        "bg-[var(--surface)] text-[var(--ink)] border border-[var(--line)] hover:border-[var(--line-strong)] hover:bg-[var(--surface-2)] active:bg-[var(--surface-2)] shadow-[0_1px_2px_rgba(0,0,0,0.03)]",
       outline:
-        "bg-transparent text-[var(--ink)] border border-[var(--line-strong)] hover:bg-[var(--surface-2)]",
+        "bg-transparent text-[var(--ink)] border border-[var(--line)] hover:border-[var(--line-strong)] hover:bg-[var(--surface-2)]",
       ghost:
-        "bg-transparent text-[var(--ink)] hover:bg-[var(--surface-2)] active:bg-[var(--surface-2)]",
+        "bg-transparent text-[var(--ink-2)] hover:text-[var(--ink)] hover:bg-[var(--surface-2)] active:bg-[var(--surface-2)]",
       destructive:
-        "bg-[var(--red)] text-white hover:opacity-90 active:opacity-95",
+        "bg-[var(--red)] text-white hover:brightness-105 active:brightness-95 shadow-sm",
     };
 
     const sizeStyles = {

@@ -29,9 +29,12 @@ export function RequirementPanel({ evaluation }: { evaluation: EvaluationResult 
 
   return (
     <div
-      className={`p-5 bg-[var(--surface)] border border-[var(--line)] border-l-[3px] ${borderColor} space-y-3.5`}
+      className={`p-5 sm:p-6 bg-[var(--surface)] border border-[var(--line)] border-l-4 ${borderColor} rounded-[8px] shadow-xs space-y-4`}
     >
       <div className="space-y-0.5">
+        <div className="text-[11px] font-semibold text-[var(--teal)] uppercase tracking-wider">
+          Eligibility Verification
+        </div>
         <h3 className="text-base font-semibold text-[var(--ink)]">
           Requirement check
         </h3>
@@ -46,25 +49,25 @@ export function RequirementPanel({ evaluation }: { evaluation: EvaluationResult 
         </p>
       </div>
 
-      <div className="space-y-2.5 pt-1">
+      <div className="space-y-3 pt-1">
         {evaluation.checks.map((chk, idx) => {
           let icon = (
             <Check
-              className="w-5 h-5 text-[var(--teal)] shrink-0 mt-0.5"
-              strokeWidth={2}
+              className="w-4 h-4 text-[var(--teal)] shrink-0 mt-0.5"
+              strokeWidth={2.5}
             />
           );
           if (chk.status === "not_met") {
             icon = (
               <X
-                className="w-5 h-5 text-[var(--red)] shrink-0 mt-0.5"
-                strokeWidth={2}
+                className="w-4 h-4 text-[var(--red)] shrink-0 mt-0.5"
+                strokeWidth={2.5}
               />
             );
           } else if (chk.status === "unknown") {
             icon = (
               <HelpCircle
-                className="w-5 h-5 text-[var(--muted)] shrink-0 mt-0.5"
+                className="w-4 h-4 text-[var(--muted)] shrink-0 mt-0.5"
                 strokeWidth={2}
               />
             );

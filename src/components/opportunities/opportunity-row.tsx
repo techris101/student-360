@@ -140,7 +140,7 @@ export function OpportunityRow({
   return (
     <Link
       href={`/opportunities/${id}`}
-      className="group block border-b border-[var(--line)] py-4 px-2 hover:bg-[var(--surface-2)] transition-colors"
+      className="group block border-b border-[var(--line)] py-4 px-3 -mx-1 rounded-[6px] hover:bg-[var(--surface-2)] transition-all duration-150"
     >
       <div className="flex items-start justify-between gap-4">
         {/* Left Column: Title, Org, Chips, Eligibility */}
@@ -153,23 +153,23 @@ export function OpportunityRow({
             {organisation}
           </p>
 
-          <div className="flex flex-wrap items-center gap-2 pt-0.5">
-            <span className="text-[13px] font-medium capitalize rounded-[4px] px-2 py-0.5 bg-[var(--surface-2)] text-[var(--ink-2)]">
+          <div className="flex flex-wrap items-center gap-1.5 pt-0.5">
+            <span className="text-xs font-medium capitalize rounded-[5px] px-2 py-0.5 bg-[var(--surface-2)] text-[var(--ink-2)] border border-[var(--line)]/50">
               {type}
             </span>
 
             {funding && funding !== "unknown" && (
-              <span className="text-[13px] font-medium capitalize rounded-[4px] px-2 py-0.5 bg-[var(--surface-2)] text-[var(--ink-2)]">
+              <span className="text-xs font-medium capitalize rounded-[5px] px-2 py-0.5 bg-[var(--surface-2)] text-[var(--ink-2)] border border-[var(--line)]/50">
                 {funding} funding
               </span>
             )}
 
-            <span className="text-[13px] font-medium capitalize rounded-[4px] px-2 py-0.5 bg-[var(--surface-2)] text-[var(--ink-2)]">
+            <span className="text-xs font-medium capitalize rounded-[5px] px-2 py-0.5 bg-[var(--surface-2)] text-[var(--ink-2)] border border-[var(--line)]/50">
               {location_scope}
             </span>
 
             {plan_ahead && (
-              <span className="text-[13px] font-medium rounded-[4px] px-2 py-0.5 bg-[var(--teal-subtle)] text-[var(--teal)]">
+              <span className="text-xs font-medium rounded-[5px] px-2 py-0.5 bg-[var(--teal-subtle)] text-[var(--teal)] border border-[var(--teal)]/20">
                 Plan ahead
               </span>
             )}

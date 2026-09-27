@@ -4,13 +4,12 @@ import { AppShell } from "@/components/shell/app-shell";
 import { ProgressStats } from "@/components/progress/progress-stats";
 import { ProgressBoard } from "@/components/progress/progress-board";
 import { UpcomingDeadlines } from "@/components/progress/upcoming-deadlines";
-import { AdvisorReviewPanel } from "@/components/progress/advisor-review-panel";
 import { getProgressData } from "@/app/actions/progress";
 import { createClient } from "@/lib/supabase/server";
 
 export const metadata: Metadata = {
   title: "Progress — Student 360",
-  description: "Track your opportunities, deadlines, and AI advisor progress reviews.",
+  description: "Track your opportunities, application statuses, and upcoming deadlines.",
 };
 
 export default async function ProgressPage() {
@@ -44,7 +43,7 @@ export default async function ProgressPage() {
             Progress
           </h1>
           <p className="text-sm text-[var(--ink-2)]">
-            Overview of your applications, impending deadlines, and weekly advisor feedback.
+            Track your saved opportunities, active submissions, and impending deadlines across all applications.
           </p>
         </div>
 
@@ -56,12 +55,6 @@ export default async function ProgressPage() {
 
         {/* Upcoming Deadlines */}
         <UpcomingDeadlines deadlines={data.upcomingDeadlines} />
-
-        {/* Advisor Review (Prompt 5, once per 7 days) */}
-        <AdvisorReviewPanel
-          initialReview={data.latestReview}
-          reviewStatus={data.reviewStatus}
-        />
       </div>
     </AppShell>
   );

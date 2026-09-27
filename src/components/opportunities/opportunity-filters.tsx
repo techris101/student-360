@@ -130,11 +130,11 @@ export function OpportunityFilters({
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search by title, organisation, or field..."
-          className="w-full h-10 pl-9 pr-20 text-sm bg-[var(--surface)] text-[var(--ink)] border border-[var(--line-strong)] rounded-[4px] placeholder:text-[var(--muted)] focus:outline-none focus:ring-2 focus:ring-[var(--teal)] focus:ring-offset-2"
+          className="w-full h-10 pl-9 pr-20 text-sm bg-[var(--surface)] text-[var(--ink)] border border-[var(--line)] rounded-[6px] placeholder:text-[var(--muted)] focus:outline-none focus:ring-2 focus:ring-[var(--teal)] transition-all"
         />
         <button
           type="submit"
-          className="absolute right-1.5 h-7 px-2.5 text-xs font-medium text-[var(--ink)] bg-[var(--surface-2)] hover:bg-[var(--line)] rounded-[3px] transition-colors"
+          className="absolute right-1.5 h-7 px-3 text-xs font-medium text-white bg-[var(--teal)] hover:brightness-105 active:scale-95 rounded-[4px] transition-all shadow-xs cursor-pointer"
         >
           Search
         </button>
@@ -151,7 +151,7 @@ export function OpportunityFilters({
             id="filter-type"
             value={currentType}
             onChange={(e) => updateFilters({ type: e.target.value })}
-            className="w-full h-9 text-xs font-medium px-2.5 bg-[var(--surface)] border border-[var(--line-strong)] text-[var(--ink)] rounded-[4px] focus:outline-none focus:ring-2 focus:ring-[var(--teal)] cursor-pointer"
+            className="w-full h-9 text-xs font-medium px-2.5 bg-[var(--surface)] border border-[var(--line)] hover:border-[var(--line-strong)] text-[var(--ink)] rounded-[6px] focus:outline-none focus:ring-2 focus:ring-[var(--teal)] cursor-pointer transition-colors"
           >
             {TYPE_OPTIONS.map((opt) => (
               <option key={opt.value} value={opt.value}>
@@ -170,7 +170,7 @@ export function OpportunityFilters({
             id="filter-funding"
             value={currentFunding}
             onChange={(e) => updateFilters({ funding: e.target.value })}
-            className="w-full h-9 text-xs font-medium px-2.5 bg-[var(--surface)] border border-[var(--line-strong)] text-[var(--ink)] rounded-[4px] focus:outline-none focus:ring-2 focus:ring-[var(--teal)] cursor-pointer"
+            className="w-full h-9 text-xs font-medium px-2.5 bg-[var(--surface)] border border-[var(--line)] hover:border-[var(--line-strong)] text-[var(--ink)] rounded-[6px] focus:outline-none focus:ring-2 focus:ring-[var(--teal)] cursor-pointer transition-colors"
           >
             {FUNDING_OPTIONS.map((opt) => (
               <option key={opt.value} value={opt.value}>
@@ -189,7 +189,7 @@ export function OpportunityFilters({
             id="filter-location"
             value={currentLocation}
             onChange={(e) => updateFilters({ location_scope: e.target.value })}
-            className="w-full h-9 text-xs font-medium px-2.5 bg-[var(--surface)] border border-[var(--line-strong)] text-[var(--ink)] rounded-[4px] focus:outline-none focus:ring-2 focus:ring-[var(--teal)] cursor-pointer"
+            className="w-full h-9 text-xs font-medium px-2.5 bg-[var(--surface)] border border-[var(--line)] hover:border-[var(--line-strong)] text-[var(--ink)] rounded-[6px] focus:outline-none focus:ring-2 focus:ring-[var(--teal)] cursor-pointer transition-colors"
           >
             {LOCATION_OPTIONS.map((opt) => (
               <option key={opt.value} value={opt.value}>
@@ -208,7 +208,7 @@ export function OpportunityFilters({
             id="filter-sort"
             value={currentSort}
             onChange={(e) => updateFilters({ sort: e.target.value })}
-            className="w-full h-9 text-xs font-medium px-2.5 bg-[var(--surface)] border border-[var(--line-strong)] text-[var(--ink)] rounded-[4px] focus:outline-none focus:ring-2 focus:ring-[var(--teal)] cursor-pointer"
+            className="w-full h-9 text-xs font-medium px-2.5 bg-[var(--surface)] border border-[var(--line)] hover:border-[var(--line-strong)] text-[var(--ink)] rounded-[6px] focus:outline-none focus:ring-2 focus:ring-[var(--teal)] cursor-pointer transition-colors"
           >
             {SORT_OPTIONS.map((opt) => (
               <option key={opt.value} value={opt.value}>

@@ -39,7 +39,6 @@ interface AppShellProps {
 
 const navItems = [
   { href: "/opportunities", label: "Opportunities", icon: Compass },
-  { href: "/advisor", label: "Advisor", icon: Bot },
   { href: "/cohorts", label: "Cohorts", icon: Users },
   { href: "/news", label: "News", icon: Newspaper },
   { href: "/progress", label: "Progress", icon: CheckSquare },
@@ -62,22 +61,23 @@ export function AppShell({
     <div className="min-h-screen bg-[var(--bg)] text-[var(--ink)] flex flex-col md:flex-row">
       {/* Mobile Top Bar (<768px) */}
       <header className="md:hidden sticky top-0 z-40 flex h-14 items-center justify-between border-b border-[var(--line)] bg-[var(--surface)] px-4">
-        <Link href="/opportunities" className="text-base font-semibold tracking-tight">
+        <Link href="/opportunities" className="text-base font-semibold tracking-tight flex items-center gap-1.5">
           {pageTitle !== "Student 360" ? (
             <span>{pageTitle}</span>
           ) : (
             <>
-              Student <span className="text-[var(--teal)]">360</span>
+              <span className="font-semibold">Student</span>
+              <span className="text-xs px-1.5 py-0.5 rounded-[4px] bg-[var(--teal-subtle)] text-[var(--teal)] font-bold">360</span>
             </>
           )}
         </Link>
         <div className="flex items-center gap-3">
           <Link
             href="/notifications"
-            className="p-1.5 rounded-[4px] text-[var(--ink-2)] hover:bg-[var(--surface-2)]"
+            className="p-1.5 rounded-[6px] text-[var(--ink-2)] hover:bg-[var(--surface-2)]"
             aria-label="Notifications"
           >
-            <Bell size={20} strokeWidth={1.5} />
+            <Bell size={19} strokeWidth={1.5} />
           </Link>
           <UserAvatarMenu user={user} />
         </div>
@@ -90,12 +90,12 @@ export function AppShell({
           <div className="px-2 py-1">
             <Link
               href="/opportunities"
-              className="text-lg font-semibold tracking-tight inline-block"
+              className="text-lg font-semibold tracking-tight inline-flex items-center gap-2"
             >
-              <span className="hidden lg:inline">
-                Student <span className="text-[var(--teal)]">360</span>
+              <span className="hidden lg:inline font-semibold">
+                Student <span className="text-xs font-bold px-1.5 py-0.5 rounded-[4px] bg-[var(--teal-subtle)] text-[var(--teal)] align-middle">360</span>
               </span>
-              <span className="lg:hidden text-[var(--teal)] text-xl font-bold">
+              <span className="lg:hidden text-xs font-bold px-1.5 py-1 rounded-[4px] bg-[var(--teal-subtle)] text-[var(--teal)]">
                 360
               </span>
             </Link>
@@ -112,14 +112,18 @@ export function AppShell({
                   key={item.href}
                   href={item.href}
                   className={cn(
-                    "flex items-center gap-3 rounded-[6px] px-3 py-2.5 text-sm font-medium transition-colors",
+                    "flex items-center gap-3 rounded-[6px] px-3 py-2 text-sm font-medium transition-all duration-150",
                     isActive
-                      ? "bg-[var(--surface-2)] text-[var(--ink)] font-semibold"
+                      ? "bg-[var(--surface-2)] text-[var(--ink)] font-semibold shadow-xs"
                       : "text-[var(--ink-2)] hover:bg-[var(--surface-2)] hover:text-[var(--ink)]"
                   )}
                   title={item.label}
                 >
-                  <Icon size={20} strokeWidth={1.5} className="shrink-0" />
+                  <Icon
+                    size={18}
+                    strokeWidth={isActive ? 2 : 1.5}
+                    className={cn("shrink-0", isActive ? "text-[var(--teal)]" : "text-[var(--ink-2)]")}
+                  />
                   <span className="hidden lg:inline">{item.label}</span>
                 </Link>
               );
@@ -129,14 +133,18 @@ export function AppShell({
             <Link
               href="/notifications"
               className={cn(
-                "flex items-center gap-3 rounded-[6px] px-3 py-2.5 text-sm font-medium transition-colors",
+                "flex items-center gap-3 rounded-[6px] px-3 py-2 text-sm font-medium transition-all duration-150",
                 pathname === "/notifications"
-                  ? "bg-[var(--surface-2)] text-[var(--ink)] font-semibold"
+                  ? "bg-[var(--surface-2)] text-[var(--ink)] font-semibold shadow-xs"
                   : "text-[var(--ink-2)] hover:bg-[var(--surface-2)] hover:text-[var(--ink)]"
               )}
               title="Notifications"
             >
-              <Bell size={20} strokeWidth={1.5} className="shrink-0" />
+              <Bell
+                size={18}
+                strokeWidth={pathname === "/notifications" ? 2 : 1.5}
+                className={cn("shrink-0", pathname === "/notifications" ? "text-[var(--teal)]" : "text-[var(--ink-2)]")}
+              />
               <span className="hidden lg:inline">Notifications</span>
             </Link>
           </nav>
@@ -165,7 +173,7 @@ export function AppShell({
       </div>
 
       {/* Mobile Bottom Tab Bar (<768px, 56px height, labels always visible) */}
-      <nav className="md:hidden fixed bottom-0 left-0 right-0 z-40 h-14 border-t border-[var(--line)] bg-[var(--surface)] grid grid-cols-5 items-center px-1">
+      <nav className="md:hidden fixed bottom-0 left-0 right-0 z-40 h-14 border-t border-[var(--line)] bg-[var(--surface)] grid grid-cols-4 items-center px-1">
         {navItems.map((item) => {
           const Icon = item.icon;
           const isActive =
@@ -177,11 +185,11 @@ export function AppShell({
               className={cn(
                 "flex flex-col items-center justify-center h-full py-1 text-center transition-colors",
                 isActive
-                  ? "text-[var(--teal)] font-medium"
+                  ? "text-[var(--teal)] font-semibold"
                   : "text-[var(--muted)] hover:text-[var(--ink-2)]"
               )}
             >
-              <Icon size={18} strokeWidth={1.5} />
+              <Icon size={18} strokeWidth={isActive ? 2 : 1.5} />
               <span className="text-[11px] leading-tight mt-0.5 truncate w-full px-1">
                 {item.label}
               </span>

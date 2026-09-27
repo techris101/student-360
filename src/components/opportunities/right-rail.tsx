@@ -53,7 +53,7 @@ export function RightRail({
   return (
     <div className="space-y-6">
       {/* Due this week section */}
-      <div className="bg-[var(--surface)] border border-[var(--line)] p-4 space-y-3">
+      <div className="bg-[var(--surface)] border border-[var(--line)] rounded-[8px] shadow-xs p-4 sm:p-5 space-y-3">
         <div className="flex items-center gap-2 text-sm font-semibold text-[var(--ink)]">
           <Clock className="w-4 h-4 text-[var(--amber)] shrink-0" strokeWidth={1.5} />
           <span>Due this week</span>
@@ -64,12 +64,12 @@ export function RightRail({
             No deadlines due in the next 7 days.
           </p>
         ) : (
-          <div className="space-y-3">
+          <div className="space-y-2">
             {dueItems.map((item) => (
               <Link
                 key={item.id}
                 href={`/opportunities/${item.id}`}
-                className="group block space-y-0.5 text-xs hover:bg-[var(--surface-2)] p-1.5 -mx-1.5 rounded-[4px] transition-colors"
+                className="group block space-y-0.5 text-xs hover:bg-[var(--surface-2)] p-2 -mx-1 rounded-[6px] transition-colors"
               >
                 <div className="font-medium text-[var(--ink)] group-hover:text-[var(--teal)] line-clamp-1">
                   {item.title}
@@ -95,7 +95,7 @@ export function RightRail({
       </div>
 
       {/* Profile Gaps Section */}
-      <div className="bg-[var(--surface)] border border-[var(--line)] p-4 space-y-3">
+      <div className="bg-[var(--surface)] border border-[var(--line)] rounded-[8px] shadow-xs p-4 sm:p-5 space-y-3">
         <div className="flex items-center gap-2 text-sm font-semibold text-[var(--ink)]">
           <AlertCircle className="w-4 h-4 text-[var(--teal)] shrink-0" strokeWidth={1.5} />
           <span>Profile gaps</span>
@@ -111,7 +111,7 @@ export function RightRail({
               {gaps.slice(0, 3).map((gap) => (
                 <div
                   key={gap.field}
-                  className="p-2.5 bg-[var(--surface-2)] border-l-[3px] border-l-[var(--amber)] text-xs text-[var(--ink)] leading-relaxed"
+                  className="p-3 bg-[var(--surface-2)] border-l-[3px] border-l-[var(--amber)] rounded-[4px] text-xs text-[var(--ink)] leading-relaxed"
                 >
                   {gap.sentence}
                 </div>
@@ -121,9 +121,9 @@ export function RightRail({
             <div className="pt-1">
               <Link
                 href="/profile"
-                className="text-xs font-medium text-[var(--teal)] hover:underline"
+                className="text-xs font-medium text-[var(--teal)] hover:underline inline-flex items-center gap-1"
               >
-                Update profile
+                <span>Update profile</span>
               </Link>
             </div>
           </div>

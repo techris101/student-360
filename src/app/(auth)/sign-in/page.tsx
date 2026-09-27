@@ -67,13 +67,14 @@ function SignInForm() {
 
   return (
     <main className="min-h-screen flex items-center justify-center p-4 bg-[var(--bg)] text-[var(--ink)]">
-      <div className="w-full max-w-sm rounded-[8px] border border-[var(--line)] bg-[var(--surface)] p-6 sm:p-8 space-y-6">
+      <div className="w-full max-w-sm rounded-[10px] border border-[var(--line)] bg-[var(--surface)] p-6 sm:p-8 space-y-6 shadow-xs">
         {/* Header */}
-        <div className="text-center space-y-1.5">
-          <Link href="/" className="text-2xl font-semibold tracking-tight inline-block">
-            Student <span className="text-[var(--teal)]">360</span>
+        <div className="text-center space-y-2">
+          <Link href="/" className="text-2xl font-semibold tracking-tight inline-flex items-center justify-center gap-2">
+            <span>Student</span>
+            <span className="text-sm font-bold px-2 py-0.5 rounded-[4px] bg-[var(--teal-subtle)] text-[var(--teal)] border border-[var(--teal)]/15">360</span>
           </Link>
-          <p className="text-sm text-[var(--ink-2)]">
+          <p className="text-xs text-[var(--ink-2)]">
             Sign in to check opportunities against your profile.
           </p>
         </div>

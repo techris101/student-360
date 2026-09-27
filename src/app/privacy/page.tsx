@@ -13,8 +13,9 @@ export default function PrivacyPolicyPage() {
     <div className="min-h-screen bg-[var(--bg)] text-[var(--ink)]">
       <header className="border-b border-[var(--line)] bg-[var(--surface)]">
         <div className="max-w-[760px] mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
-          <Link href="/" className="text-sm font-semibold tracking-tight">
-            Student <span className="text-[var(--teal)]">360</span>
+          <Link href="/" className="text-sm font-semibold tracking-tight inline-flex items-center gap-1.5">
+            <span>Student</span>
+            <span className="text-xs font-bold px-1.5 py-0.5 rounded-[4px] bg-[var(--teal-subtle)] text-[var(--teal)] border border-[var(--teal)]/15">360</span>
           </Link>
           <Link
             href="/"
@@ -89,9 +90,9 @@ export default function PrivacyPolicyPage() {
                 requirements you meet.
               </li>
               <li>
-                <strong>Personalised AI advisory:</strong> Feeding your profile and
-                active applications into the Advisor to provide actionable, honest
-                feedback.
+                <strong>Progress and milestone tracking:</strong> Tracking saved,
+                applied, and submitted applications with status updates and verified
+                deadline alerts.
               </li>
               <li>
                 <strong>Deadlines and notifications:</strong> Notifying you of

@@ -12,16 +12,16 @@ export function Chip({
   ...props
 }: ChipProps) {
   const variantStyles = {
-    default: "bg-[var(--surface-2)] text-[var(--ink)]",
-    met: "bg-[var(--teal-subtle)] text-[var(--teal)]",
-    partial: "bg-[var(--amber-subtle)] text-[var(--amber)]",
-    not_met: "bg-[var(--red-subtle)] text-[var(--red)]",
+    default: "bg-[var(--surface-2)] text-[var(--ink-2)] border border-[var(--line)]/50",
+    met: "bg-[var(--teal-subtle)] text-[var(--teal)] border border-[var(--teal)]/15 font-medium",
+    partial: "bg-[var(--amber-subtle)] text-[var(--amber)] border border-[var(--amber)]/15 font-medium",
+    not_met: "bg-[var(--red-subtle)] text-[var(--red)] border border-[var(--red)]/15 font-medium",
   };
 
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-1 rounded-[4px] px-2 py-0.5 text-[13px] font-medium leading-none select-none",
+        "inline-flex items-center gap-1 rounded-[5px] px-2 py-0.5 text-xs font-medium leading-normal select-none transition-colors",
         variantStyles[variant],
         className
       )}
