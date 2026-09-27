@@ -9,11 +9,7 @@ import {
   ShieldCheck,
   Users,
   Search,
-  Building2,
   GraduationCap,
-  Calendar,
-  Award,
-  BookOpen,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SEED_OPPORTUNITIES } from "@/lib/data/opportunities";
