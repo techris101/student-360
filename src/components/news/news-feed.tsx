@@ -116,7 +116,7 @@ export function NewsFeed({ initialNews }: NewsFeedProps) {
           )}
         </div>
       ) : (
-        <div className="divide-y divide-border rounded-lg border border-border bg-surface overflow-hidden">
+        <div className="divide-y divide-[var(--line)] rounded-[8px] border border-[var(--line)] bg-[var(--surface)] shadow-xs overflow-hidden">
           {filteredNews.map((item) => (
             <NewsRow key={item.id} item={item} />
           ))}
@@ -146,15 +146,15 @@ function NewsRow({ item }: { item: NewsItem }) {
   }
 
   return (
-    <article className="p-4 hover:bg-surface-2 transition-colors space-y-2">
+    <article className="p-4 sm:p-5 hover:bg-[var(--surface-2)] transition-colors space-y-2">
       {/* Top Metadata */}
-      <div className="flex items-center gap-2 text-[11px] text-muted flex-wrap">
-        <span className="font-medium px-2 py-0.5 rounded bg-surface-3 text-ink border border-border capitalize">
+      <div className="flex items-center gap-2 text-[11px] text-[var(--muted)] flex-wrap">
+        <span className="text-xs font-medium px-2.5 py-0.5 rounded-[5px] bg-[var(--surface-2)] text-[var(--ink-2)] border border-[var(--line)]/50 capitalize">
           {categoryLabel}
         </span>
         <span>•</span>
         <span className="flex items-center gap-1">
-          <Calendar className="w-3 h-3 text-muted" />
+          <Calendar className="w-3 h-3 text-[var(--muted)]" />
           {publishedDate}
         </span>
         <span>•</span>

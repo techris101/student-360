@@ -133,20 +133,20 @@ function CohortRow({ cohort }: { cohort: CohortItem }) {
           >
             {cohort.opportunity_title}
           </Link>
-          <span className="text-[11px] font-medium px-2 py-0.5 rounded bg-surface-3 text-muted capitalize">
+          <span className="text-xs font-medium px-2 py-0.5 rounded-[5px] bg-[var(--surface-2)] text-[var(--ink-2)] border border-[var(--line)]/50 capitalize">
             {cohort.opportunity_type}
           </span>
           {cohort.is_member && (
-            <span className="text-[11px] font-medium px-2 py-0.5 rounded bg-teal/10 text-teal border border-teal/20">
+            <span className="text-xs font-medium px-2 py-0.5 rounded-[5px] bg-[var(--teal-subtle)] text-[var(--teal)] border border-[var(--teal)]/15">
               Joined
             </span>
           )}
           {cohort.is_closed ? (
-            <span className="text-[11px] font-medium px-2 py-0.5 rounded bg-amber/10 text-amber border border-amber/20">
+            <span className="text-xs font-medium px-2 py-0.5 rounded-[5px] bg-[var(--amber-subtle)] text-[var(--amber)] border border-[var(--amber)]/15">
               Closed
             </span>
           ) : (
-            <span className="text-[11px] font-medium px-2 py-0.5 rounded bg-green-500/10 text-green-700 dark:text-green-400 border border-green-500/20">
+            <span className="text-xs font-medium px-2 py-0.5 rounded-[5px] bg-[var(--teal-subtle)] text-[var(--teal)] border border-[var(--teal)]/15">
               Open
             </span>
           )}

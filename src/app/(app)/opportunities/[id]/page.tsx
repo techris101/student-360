@@ -261,7 +261,7 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
               href={opportunity.official_url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 h-10 px-4 text-sm font-medium text-white bg-[var(--teal)] hover:bg-[#0c5945] rounded-[4px] transition-colors"
+              className="inline-flex items-center gap-2 h-10 px-5 text-sm font-medium text-white bg-[var(--teal)] hover:brightness-105 active:scale-[0.985] rounded-[6px] transition-all shadow-xs"
             >
               <span>Apply on the official site</span>
               <ExternalLink className="w-4 h-4" strokeWidth={1.5} />
@@ -296,7 +296,7 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
           <h2 className="text-base font-semibold text-[var(--ink)]">
             Key facts
           </h2>
-          <dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-sm bg-[var(--surface)] border border-[var(--line)] p-4 rounded-[4px]">
+          <dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3.5 text-sm bg-[var(--surface)] border border-[var(--line)] p-5 rounded-[8px] shadow-xs">
             <div>
               <dt className="text-xs text-[var(--muted)] font-medium">Deadline</dt>
               <dd className="text-sm text-[var(--ink)] font-medium pt-0.5 tabular-nums">
@@ -347,7 +347,7 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
 
         {/* Plan Ahead Section (PRODUCT F1) */}
         {opportunity.plan_ahead && opportunity.prepare_now && opportunity.prepare_now.length > 0 && (
-          <div className="space-y-3 bg-[var(--surface-2)] border border-[var(--line)] p-5 rounded-[4px]">
+          <div className="space-y-3 bg-[var(--surface-2)] border border-[var(--line)] p-5 sm:p-6 rounded-[8px] shadow-xs">
             <div className="space-y-1">
               <div className="flex items-center gap-2">
                 <Calendar className="w-4 h-4 text-[var(--teal)]" strokeWidth={2} />
@@ -377,7 +377,7 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
         </div>
 
         {/* Cohort Section (DESIGN.md: Cohort: 14 students applying — Open cohort) */}
-        <div className="bg-[var(--surface)] border border-[var(--line)] p-4 rounded-[4px] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div className="bg-[var(--surface)] border border-[var(--line)] p-5 rounded-[8px] shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div className="flex items-center gap-3">
             <div className="w-9 h-9 rounded-full bg-[var(--surface-2)] text-[var(--teal)] flex items-center justify-center shrink-0">
               <Users className="w-4 h-4" strokeWidth={1.5} />
@@ -394,7 +394,7 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
 
           <Link
             href={`/cohorts/${opportunity.id}`}
-            className="inline-flex items-center justify-center h-9 px-4 text-xs font-medium bg-[var(--surface)] border border-[var(--line-strong)] text-[var(--ink)] rounded-[4px] hover:bg-[var(--surface-2)] transition-colors self-start sm:self-auto shrink-0"
+            className="inline-flex items-center justify-center h-9 px-4 text-xs font-medium bg-[var(--surface)] border border-[var(--line)] text-[var(--ink)] rounded-[6px] hover:bg-[var(--surface-2)] active:scale-[0.985] transition-all self-start sm:self-auto shrink-0"
           >
             Open cohort
           </Link>
